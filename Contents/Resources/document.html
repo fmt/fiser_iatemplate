@@ -17,8 +17,8 @@
     <script type="text/javascript" src="modules/flowchart/flowchart.min.js"></script>
 
     <!-- Mermaid add-on -->
-	<script src="modules/mermaid/mermaid.js"></script>
-	<script>mermaid.initialize({startOnLoad:true,theme:"forest"});</script>
+	<script src="modules/mermaid/mermaid.min.js"></script>
+	<script>mermaid.initialize({startOnLoad:false,theme:"forest"});</script>
 
     <!-- Graphic Libraries -->
     <script src="modules/chartjs/chart.js"></script>
@@ -45,6 +45,11 @@
       ]
     }
   </code></pre>
+  <h2>mermaid</h2>
+  <pre><code class="mermaid">
+	graph TD
+    	a --> b
+  </code>
   <h2>flowchart</h2>
   <pre><code class="flow">
     st=>start: Need something to be translated!:>https://www.localistars.com[blank]

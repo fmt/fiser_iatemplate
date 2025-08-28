@@ -84,11 +84,31 @@ window.addEventListener('load', function() {
             })
         }
     }
+
+    // Mermaid
+    var processMermaid = function() {
+        var elements = document.getElementsByClassName('mermaid')
+        for (var i = 0, l = elements.length; i < l; i++) {
+            // only get the first one in the array, because the previous one has been removed or replaced
+            var element = elements[0]
+            var code = element.innerText.trim()
+
+            // Create a new div for displaying chart
+            var div_new = document.createElement('div')
+            var div_new_id = 'mermaid_' + i
+            div_new.setAttribute('id', div_new_id)
+            div_new.textContent = code;
+            element.parentNode.replaceChild(div_new, element)
+            mermaid.init(undefined, '#' + div_new_id);
+        }
+    }
+
     var refresh = function() {
         processChart()
         processCharlist()
         processPlotly()
         processFlowchart()
+        processMermaid()
     }
     //refresh()
     document.body.addEventListener('ia-writer-change', refresh)
